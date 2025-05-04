@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>搜索推荐词采集助手 - 设置</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #F7F7F7;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      color: #333;
+    }
+    
+    .container {
+      max-width: 700px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      border: 1px solid #eaeaea;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .header h1 {
+      font-size: 24px;
+      color: #0D0A16;
+      margin-bottom: 8px;
+    }
+    
+    .header p {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .section {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eaeaea;
+      padding-bottom: 20px;
+    }
+    
+    .section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .section-title {
+      font-size: 18px;
+      color: #0D0A16;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    .option-group {
+      margin-bottom: 20px;
+    }
+    
+    .option-label {
+      display: block;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    
+    .option-input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      font-size: 14px;
+      background-color: #fafafa;
+      color: #333;
+    }
+    
+    .option-input:focus {
+      outline: none;
+      border-color: #FF6464;
+      box-shadow: 0 0 0 2px rgba(255, 100, 100, 0.25);
+    }
+    
+    .radio-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .radio-option {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 8px 12px;
+      background-color: #f0f0f0;
+      border-radius: 30px;
+      margin-bottom: 8px;
+      transition: all 0.2s ease;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .radio-option:hover {
+      background-color: #e8e8e8;
+      border-color: #d0d0d0;
+    }
+    
+    .radio-option input {
+      margin-right: 6px;
+      accent-color: #FF6464;
+    }
+    
+    button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background-color: #FF6464;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: 20px;
+      box-shadow: 0 4px 8px rgba(255, 100, 100, 0.3);
+    }
+    
+    button:hover {
+      background-color: #ff7a7a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(255, 100, 100, 0.4);
+    }
+    
+    .support-info {
+      margin-top: 25px;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+    
+    .support-sites {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .site-badge {
+      background-color: #f0f0f0;
+      color: #555;
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 12px;
+      border: 1px solid #e0e0e0;
+      transition: all 0.2s ease;
+    }
+    
+    .site-badge:hover {
+      background-color: #FF6464;
+      color: #fff;
+      border-color: #FF6464;
+      transform: translateY(-2px);
+    }
+    
+    .status-message {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 14px;
+      text-align: center;
+      background-color: #f0f0f0;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .status-success {
+      display: block;
+      background-color: rgba(19, 115, 51, 0.1);
+      color: #137333;
+      border: 1px solid rgba(74, 222, 128, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>搜索推荐词采集助手</h1>
+      <p>设置您的采集偏好</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">采集设置</h2>
+      
+      <div class="option-group">
+        <label class="option-label">默认采集层级</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="defaultLevel" value="1" checked>
+            一级（仅搜索关键词下的直接推荐）
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="defaultLevel" value="2">
+            二级（包含推荐词的推荐词）
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="defaultLevel" value="3">
+            三级（全面深度采集，耗时较长）
+          </label>
+        </div>
+      </div>
+      
+      <div class="option-group">
+        <label class="option-label">采集结果格式</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="defaultFormat" value="csv" checked>
+            CSV 表格格式
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="defaultFormat" value="md">
+            Markdown 思维导图格式
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">显示设置</h2>
+      
+      <div class="option-group">
+        <label class="option-label">采集面板位置</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="panelPosition" value="right" checked>
+            右侧
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="panelPosition" value="left">
+            左侧
+          </label>
+        </div>
+      </div>
+      
+      <div class="option-group">
+        <label class="option-label">自动打开采集结果</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="autoShowResults" value="yes" checked>
+            是
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="autoShowResults" value="no">
+            否
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <button id="saveSettings">保存设置</button>
+    <div id="statusMessage" class="status-message">设置已保存！</div>
+    
+    <div class="support-info">
+      <p>当前支持以下网站的搜索推荐词采集：</p>
+      <div class="support-sites">
+        <span class="site-badge">小红书</span>
+        <span class="site-badge">抖音</span>
+        <span class="site-badge">B站</span>
+        <span class="site-badge">百度</span>
+        <span class="site-badge">Google</span>
+      </div>
+    </div>
+  </div>

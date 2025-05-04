@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "搜索推荐词采集助手",
+  "version": "1.0",
+  "description": "提取小红书、抖音、B站、百度、Google搜索推荐词",
+  "author": "Jia",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_icon": "icon16.png",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://www.xiaohongshu.com/*", "https://www.douyin.com/*", "https://www.bilibili.com/*", "https://www.baidu.com/*", "https://www.google.com.hk/*","https://www.google.com/*"],
+      "js": ["js/content-script.js"],
+      "css": ["css/content-styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["css/content-styles.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs"
+  ]
+}

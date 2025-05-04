@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>搜索推荐词采集助手</title>
+  <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>搜索推荐词采集助手</h1>
+    </div>
+    
+    <div class="input-field">
+      <textarea id="keywords" placeholder="请输入关键词，支持换行输入多关键词
+添加{c}作为通配符可自动替换为a-z字母
+支持：抖音、小红书、B站、百度、Google"></textarea>
+      <div class="level-selector">
+        <span>采集层级：</span>
+        <label><input type="radio" name="level" value="1" checked> 1级</label>
+        <label><input type="radio" name="level" value="2"> 2级</label>
+        <label><input type="radio" name="level" value="3"> 3级</label>
+      </div>
+      <button id="submit">提取推荐词</button>
+    </div>
+
+    <div id="status" class="status-message"></div>
+    
+    <div id="popup" class="custom-popup">
+      <div class="custom-popup-overlay"></div>
+      <div class="custom-popup-content">
+        <span id="message" class="custom-popup-question"></span>
+        <button id="closePopupBtn" class="custom-popup-close-btn">确认</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/popup.js"></script>
+</body>
+</html>
