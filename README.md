@@ -3,6 +3,7 @@
 ![版本](https://img.shields.io/badge/版本-1.0-blue)
 ![许可证](https://img.shields.io/badge/许可证-MIT-green)
 
+![](icon128.png)
 一款强大的浏览器扩展，用于从主流社交媒体和搜索引擎中采集搜索推荐词，帮助内容创作者、市场营销人员和SEO优化专家发现热门话题和搜索趋势。
 
 ## 功能特点
